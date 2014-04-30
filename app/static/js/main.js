@@ -19,7 +19,9 @@
         $item.removeClass('draggable-source');
         $item.addClass('draggable-canvas');
         $item.css('position', 'absolute');
-        $item.find('p').attr('contenteditable', true);
+
+        $item.attr('contentEditable', 'true');
+
         $this.append($item.get(0));
 
         position.left = position.left - 200;
