@@ -107,6 +107,35 @@ textarea {
   background-color: #16181d;
 }
 
+#drag-menu .draggable {
+  width: 75px;
+  height: 75px;
+  display: inline-block;
+}
+
+.draggable-contents {
+  display: table;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.draggable p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.draggable.txt {
+  background-color: #f58f21;
+  color: #be5519;
+}
+
+.draggable.img {
+  background-color: #704099;
+  color: #441469;
+}
+
 #canvas {
   position: absolute;
   left: 200px;
