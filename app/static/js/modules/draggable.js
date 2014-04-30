@@ -17,9 +17,10 @@
       $item.addClass('draggable-canvas');
       $item.css('position', 'absolute');
 
-      $item.attr('contentEditable', 'true');
+      var item = $item.get(0);
+      window.postitly.editingContentHelper.makeEditable(item);
 
-      $this.append($item.get(0));
+      $this.append(item);
 
       position.left = position.left - 200;
     }
