@@ -46,6 +46,7 @@
     $('.draggable-source').draggable({ helper: 'clone'});
     $('.draggable-canvas').draggable(canvasDraggableOptions);
 
+
     $('#canvas').droppable({
       drop: canvasDrop
     });

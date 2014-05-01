@@ -22,7 +22,7 @@
       var span = domElement.getElementsByTagName('span')[0];
       var itemText = span.textContent;
       var itemId = domElement.getAttribute('data-id');
-      var itemType = domElement.classList.contains('img') ? 'Img' : 'Txt';
+      var itemType = domElement.classList.contains('img') ? 'img' : 'txt';
       var itemLeft = domElement.style.left.replace('px','');
       var itemTop = domElement.style.top.replace('px','');
 

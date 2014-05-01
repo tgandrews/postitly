@@ -15,5 +15,10 @@
     </ul>
   </div>
   <div id="canvas">
+    {% for note in notes %}
+      <div class="draggable draggable-canvas txt" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
+        <div class="draggable-content"><span>{{ note.text }}</span></div>
+      </div>
+    {% endfor %}
   </div>
 {% endblock %}
