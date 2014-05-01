@@ -130,6 +130,7 @@ textarea {
   text-align: center;
   display: table-cell;
   vertical-align: middle;
+  max-width: 200px;
 }
 
 .draggable.txt {
@@ -140,6 +141,10 @@ textarea {
 .draggable.img {
   background-color: #704099;
   color: #441469;
+}
+
+.img.img-added span {
+  display: none;
 }
 
 #canvas {

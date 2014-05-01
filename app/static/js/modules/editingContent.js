@@ -12,6 +12,11 @@
       item.addEventListener('blur', editingContent.onBlur);
     },
     onBlur: function () {
+      var item = window.postitly.itemStore.createItemFromElement(this);
+      if (item.type === 'Img') {
+        this.style.backgroundImage = "url('" + item.text + "')";
+        this.classList.add('img-added');
+      }
       window.postitly.itemStore.update(this);
     }
   }
