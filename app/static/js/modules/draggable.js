@@ -1,5 +1,5 @@
 (function ($, window, undefined) {
-  var canvasDraggableOptions = { continment: 'parent' };
+  var canvasDraggableOptions = { containment: 'parent' };
 
   var canvasDrop =  function (event, ui) {
     var $this = $(this);
