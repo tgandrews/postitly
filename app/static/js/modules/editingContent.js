@@ -20,7 +20,6 @@
   if (window.postitly === undefined) {
     window.postitly = {};
   };
-
   window.postitly.editingContent = function () {
     editingContent.setup();
   };

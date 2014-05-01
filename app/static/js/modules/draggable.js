@@ -17,12 +17,18 @@
       $item.addClass('draggable-canvas');
       $item.css('position', 'absolute');
 
+      var itemId = (new Date()).getTime();
+      $item.attr('data-id', itemId)
+
+      var itemType = $item.hasClass('txt') ? 'Txt' : 'Img';
+
       var item = $item.get(0);
       window.postitly.editingContentHelper.makeEditable(item);
-
       $this.append(item);
 
       position.left = position.left - 200;
+
+      window.postitly.itemStore.create({ position: position, id: itemId, type: itemType, text: itemType })
     }
 
     $item.css('left', position.left);
