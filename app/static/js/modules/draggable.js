@@ -3,11 +3,12 @@
 
   var canvasDrop =  function (event, ui) {
     var $this = $(this);
-    var $item;
+    var $item, item;
     var position = { left: ui.position.left, top: ui.position.top };
-
-    if ($this.has(ui.draggable).length === 1) {
-      $item = $(ui.draggable);
+    var updatingExisting = $this.has(ui.draggable).length === 1;
+    if (updatingExisting) {
+      $item = ui.draggable;
+      item = $item.get(0);
     }
     else {
       var $item = $(ui.draggable).clone();
@@ -20,19 +21,22 @@
       var itemId = (new Date()).getTime();
       $item.attr('data-id', itemId)
 
-      var itemType = $item.hasClass('txt') ? 'Txt' : 'Img';
-
-      var item = $item.get(0);
+      item = $item.get(0);
       window.postitly.editingContentHelper.makeEditable(item);
       $this.append(item);
 
       position.left = position.left - 200;
-
-      window.postitly.itemStore.create({ position: position, id: itemId, type: itemType, text: itemType })
     }
 
     $item.css('left', position.left);
     $item.css('top', position.top);
+
+    if (updatingExisting) {
+      window.postitly.itemStore.update(item);
+    }
+    else {
+      window.postitly.itemStore.create(item)
+    }
   };
 
   if (window.postitly === undefined) {

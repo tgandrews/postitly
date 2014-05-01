@@ -12,8 +12,7 @@
       item.addEventListener('blur', editingContent.onBlur);
     },
     onBlur: function () {
-      var span = this.getElementsByTagName('span')[0];
-      console.log(span.textContent);
+      window.postitly.itemStore.update(this);
     }
   }
 

@@ -8,6 +8,13 @@ def home():
 
 @app.route('/notes', methods=['POST'])
 def create_note():
+  print 'Create note'
+  print request.form
+  return ''
+
+@app.route('/notes/<int:note_id>', methods=['PUT'])
+def update_note(note_id):
+  print 'Update note: ' + str(note_id)
   print request.form
   return ''
 

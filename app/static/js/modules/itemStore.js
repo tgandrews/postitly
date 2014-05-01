@@ -1,22 +1,32 @@
 (function ($, window, undefined){
   var itemStore = {
-    create: function (item) {
-      var data = {
-        id: item.id,
-        left: item.position.left,
-        top: item.position.top,
-        type: item.type,
-        text: item.text
-      };
+    create: function (domElement) {
+      var item = this.createItemFromElement(domElement);
       $.ajax({
         type: "POST",
         url: "/notes",
-        data: data,
-        dataType: "json",
-        success: function () {
-          console.log('Success!');
-        }
+        data: item,
+        dataType: "json"
       });
+    },
+    update: function (domElement) {
+      var item = this.createItemFromElement(domElement);
+      $.ajax({
+        type: "PUT",
+        url: "/notes/" + item.id,
+        data: item,
+        dataType: "json"
+      });
+    },
+    createItemFromElement: function (domElement) {
+      var span = domElement.getElementsByTagName('span')[0];
+      var itemText = span.textContent;
+      var itemId = domElement.getAttribute('data-id');
+      var itemType = domElement.classList.contains('img') ? 'Img' : 'Txt';
+      var itemLeft = domElement.style.left.replace('px','');
+      var itemTop = domElement.style.top.replace('px','');
+
+      return { id: itemId, left: itemLeft, top: itemTop, text: itemText, type: itemType };
     }
   };
 
