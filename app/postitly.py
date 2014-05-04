@@ -34,7 +34,7 @@ def desktop(desktop_id):
   cursor = db.execute('select id, text, type, left, top from notes where desktop = ?', [desktop_id])
   notes = cursor.fetchall()
   print notes
-  return render_template('home.html', notes=notes)
+  return render_template('home.html', notes=notes, desktop_id=desktop_id)
 
 @app.route('/notes', methods=['POST'])
 def create_note():

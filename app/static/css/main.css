@@ -103,8 +103,43 @@ textarea {
   left: 0;
   width: 200px;
   height: 100%;
-
   background-color: #16181d;
+}
+
+#desktops {
+  padding: 0;
+}
+
+#desktops li {
+  list-style-type: none;
+  height: 40px;
+  display: table;
+  width: 100%;
+}
+
+#desktops li div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#desktops li a  {
+  display: inline-block;
+  float: left;
+  margin-left: 20px;
+}
+
+span.rectangle {
+  border: #7E818A 1px solid;
+  width: 18px;
+  display: inline-block;
+  height: 11px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+#desktops li.selected-desktop {
+  background-color: #515459;
 }
 
 #drag-menu .draggable {
