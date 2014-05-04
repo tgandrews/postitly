@@ -108,6 +108,8 @@ textarea {
 
 #desktops {
   padding: 0;
+  margin: 0;
+  border-bottom: #515459 1px solid;
 }
 
 #desktops li {
@@ -126,20 +128,33 @@ textarea {
   display: inline-block;
   float: left;
   margin-left: 20px;
+  color: #3F424B;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-span.rectangle {
-  border: #7E818A 1px solid;
-  width: 18px;
+.rectangle {
+  border: #3F424B 1px solid;
+  width: 20px;
   display: inline-block;
-  height: 11px;
+  height: 12px;
   float: left;
   margin-left: 20px;
-  margin-top: 3px;
+  margin-top: 1px;
 }
 
 #desktops li.selected-desktop {
   background-color: #515459;
+}
+
+.selected-desktop .rectangle {
+  border: #7E818A 1px solid;
+}
+
+#desktops .selected-desktop a {
+  color: #7E818A;
+  text-decoration: none;
 }
 
 #drag-menu .draggable {
