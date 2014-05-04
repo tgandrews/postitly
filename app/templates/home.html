@@ -16,9 +16,19 @@
   </div>
   <div id="canvas">
     {% for note in notes %}
-      <div class="draggable draggable-canvas txt" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
-        <div class="draggable-content"><span>{{ note.text }}</span></div>
-      </div>
+      {% if note.type == 'txt' %}
+        <div class="draggable draggable-canvas txt" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
+          <div class="draggable-content"><span>{{ note.text }}</span></div>
+        </div>
+      {% elif note.type == 'img' and note.text.startswith("http") %}
+        <div class="draggable draggable-canvas img  img-added" data-id="{{ note.id }}" style="background-image: url('{{ note.text }}'); left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
+          <div class="draggable-content"><span>{{ note.text }}</span></div>
+        </div>
+      {% else %}
+        <div class="draggable draggable-canvas img" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
+          <div class="draggable-content"><span>{{ note.text }}</span></div>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 {% endblock %}

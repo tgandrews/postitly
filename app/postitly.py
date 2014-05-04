@@ -43,7 +43,7 @@ def create_note():
   form = request.form
   db = get_db()
   db.execute('insert into notes (id, text, type, left, top, desktop) values (?, ?, ?, ?, ?, ?)',
-    [form['id'], form['text'], form['type'], form['left'], form['top'], 1])
+    [form['id'], form['text'], form['type'], form['left'], form['top'], form['desktop']])
   db.commit()
   return ''
 
@@ -54,8 +54,8 @@ def update_note(note_id):
 
   form = request.form
   db = get_db()
-  db.execute('update notes set text = ?, type = ?, left = ?, top = ?, desktop = ? where id = ?',
-    [form['text'], form['type'], form['left'], form['top'], 1, note_id])
+  db.execute('update notes set text = ?, type = ?, left = ?, top = ? where id = ?',
+    [form['text'], form['type'], form['left'], form['top'], note_id])
   db.commit()
   return ''
 

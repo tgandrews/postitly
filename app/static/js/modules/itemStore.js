@@ -25,8 +25,11 @@
       var itemType = domElement.classList.contains('img') ? 'img' : 'txt';
       var itemLeft = domElement.style.left.replace('px','');
       var itemTop = domElement.style.top.replace('px','');
+      var desktopRegex = /\/desktop\/(\d)/;
+      var matches = desktopRegex.exec(window.location.pathname) || [];
+      var itemDesktop = matches[1] || 1;
 
-      return { id: itemId, left: itemLeft, top: itemTop, text: itemText, type: itemType };
+      return { id: itemId, left: itemLeft, top: itemTop, text: itemText, type: itemType, desktop: itemDesktop };
     }
   };
 
