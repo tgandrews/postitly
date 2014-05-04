@@ -25,7 +25,7 @@
       window.postitly.editingContentHelper.makeEditable(item);
       $this.append(item);
 
-      position.left = position.left - 200;
+      position.left = position.left - $('#menu').width();
     }
 
     $item.css('left', position.left);
