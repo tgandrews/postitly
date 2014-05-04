@@ -10,6 +10,7 @@
     makeEditable: function (item) {
       item.setAttribute('contenteditable', 'true');
       item.addEventListener('blur', editingContent.onBlur);
+      item.addEventListener('click', editingContent.onClick);
     },
     onBlur: function () {
       var item = window.postitly.itemStore.createItemFromElement(this);
@@ -18,6 +19,9 @@
         this.classList.add('img-added');
       }
       window.postitly.itemStore.update(this);
+    },
+    onClick: function () {
+      this.focus();
     }
   }
 
