@@ -14,8 +14,9 @@
     },
     onBlur: function () {
       var item = window.postitly.itemStore.createItemFromElement(this);
-      if (item.type === 'img') {
-        this.style.backgroundImage = "url('" + item.text + "')";
+      var text = item.text;
+      if (item.type === 'img' && text.indexOf('http') === 0) {
+        this.style.backgroundImage = "url('" + text + "')";
         this.classList.add('img-added');
       }
       window.postitly.itemStore.update(this);
