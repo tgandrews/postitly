@@ -130,6 +130,7 @@ textarea {
   width: 60px;
   height: 60px;
   display: inline-block;
+  font-size: 22px;
 }
 
 .draggable,
