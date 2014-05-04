@@ -119,7 +119,7 @@ textarea {
    ========================================================================== */
 
 #drag-menu {
-  width: 124px;
+  width: 126px;
   padding-top: 60px;
   margin: 0 auto 0 auto;
   padding-bottom: 30px;
@@ -139,6 +139,10 @@ textarea {
   height: 200px;
 }
 
+.draggable.focus {
+  outline: 1px solid red;
+}
+
 .draggable-content {
   display: table;
   overflow: hidden;
@@ -152,6 +156,7 @@ textarea {
   display: table-cell;
   vertical-align: middle;
   max-width: 200px;
+  outline: 0px solid transparent;
 }
 
 .draggable.txt {
