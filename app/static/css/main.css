@@ -94,7 +94,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Menu & Canvas
    ========================================================================== */
 
 
@@ -105,6 +105,110 @@ textarea {
   height: 100%;
   background-color: #16181d;
 }
+
+#canvas {
+  position: absolute;
+  left: 200px;
+  right: 0;
+  height: 100%;
+  background-color: #f4f4f4;
+}
+
+/* ==========================================================================
+   Drag menu & Dragging
+   ========================================================================== */
+
+#drag-menu {
+  width: 124px;
+  padding-top: 60px;
+  margin: 0 auto 0 auto;
+  padding-bottom: 30px;
+}
+
+
+#drag-menu .draggable {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+}
+
+.draggable,
+#drag-menu .ui-draggable-dragging.draggable {
+  width: 200px;
+  height: 200px;
+}
+
+.draggable-content {
+  display: table;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.draggable span {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  max-width: 200px;
+}
+
+.draggable.txt {
+  background-color: #f58f21;
+  color: #be5519;
+}
+
+.draggable.img {
+  background-color: #704099;
+  color: #441469;
+}
+
+.img.img-added span {
+  display: none;
+}
+
+.ui-draggable-dragging {
+  z-index: 99;
+}
+
+.triangle:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 10px 10px 0 0;
+  border-style: solid;
+}
+
+.draggable-canvas .triangle:before,
+#drag-menu .ui-draggable-dragging.draggable .triangle:before {
+  border-width: 20px 20px 0 0;
+}
+
+.draggable-source.txt .triangle:before {
+  border-color: #bf5519 #16181d #bf5519 #bf5519;
+}
+
+.draggable-source.img .triangle:before {
+  border-color: #421666 #16181d #421666 #421666;
+}
+
+.txt .triangle:before {
+  border-color: #bf5519 #f4f4f4 #bf5519 #bf5519;
+}
+
+.img .triangle:before {
+  border-color: #421666 #f4f4f4 #421666 #421666;
+}
+
+.img.img-added .triangle:before {
+  border: none;
+}
+
+
+/* ==========================================================================
+   Desktops
+   ========================================================================== */
 
 #desktops {
   padding: 0;
@@ -157,61 +261,6 @@ textarea {
   text-decoration: none;
 }
 
-#drag-menu .draggable {
-  width: 75px;
-  height: 75px;
-  display: inline-block;
-}
-
-.draggable,
-#drag-menu .ui-draggable-dragging.draggable {
-  width: 200px;
-  height: 200px;
-}
-
-.draggable-content {
-  display: table;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-}
-
-.draggable span {
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  max-width: 200px;
-}
-
-.draggable.txt {
-  background-color: #f58f21;
-  color: #be5519;
-}
-
-.draggable.img {
-  background-color: #704099;
-  color: #441469;
-}
-
-.img.img-added span {
-  display: none;
-}
-
-#canvas {
-  position: absolute;
-  left: 200px;
-  right: 0;
-  height: 100%;
-  background-color: #f4f4f4;
-}
-
-/* ==========================================================================
-   Dragging
-   ========================================================================== */
-
-.ui-draggable-dragging {
-  z-index: 99;
-}
 
 
 /* ==========================================================================

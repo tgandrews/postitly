@@ -3,10 +3,10 @@
   <div id="menu">
     <div id="drag-menu">
       <div class="draggable draggable-source txt">
-        <div class="draggable-content"><span>txt</span></div>
+        <div class="draggable-content triangle"><span>Txt</span></div>
       </div>
       <div class="draggable draggable-source img">
-        <div class="draggable-content"><span>img</span></div>
+        <div class="draggable-content triangle"><span>Img</span></div>
       </div>
     </div>
     <ul id="desktops">
@@ -23,15 +23,15 @@
     {% for note in notes %}
       {% if note.type == 'txt' %}
         <div class="draggable draggable-canvas txt" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
-          <div class="draggable-content"><span>{{ note.text }}</span></div>
+          <div class="draggable-content triangle"><span>{{ note.text }}</span></div>
         </div>
       {% elif note.type == 'img' and note.text.startswith("http") %}
         <div class="draggable draggable-canvas img  img-added" data-id="{{ note.id }}" style="background-image: url('{{ note.text }}'); left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
-          <div class="draggable-content"><span>{{ note.text }}</span></div>
+          <div class="draggable-content triangle"><span>{{ note.text }}</span></div>
         </div>
       {% else %}
         <div class="draggable draggable-canvas img" data-id="{{ note.id }}" style="left: {{ note.left }}px; top: {{ note.top }}px; position: absolute;">
-          <div class="draggable-content"><span>{{ note.text }}</span></div>
+          <div class="draggable-content triangle"><span>{{ note.text }}</span></div>
         </div>
       {% endif %}
     {% endfor %}
